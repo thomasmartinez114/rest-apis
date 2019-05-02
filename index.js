@@ -9,6 +9,9 @@ const app = express();
 mongoose.connect('mongodb:./mongod');
 mongoose.Promise = global.Promise;
 
+// create static front-end
+app.use(express.static('public'));
+
 app.use(bodyParser.json());
 
 // initialize routes
